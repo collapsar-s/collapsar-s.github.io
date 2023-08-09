@@ -17,3 +17,89 @@
 ::-webkit-scrollbar-corner {
     background-color: transparent
 }
+
+    /*----------------------ҳ����ʽ����---------------------*/
+:root {
+    /*
+    --trans-light������ģʽ��͸���ȵı���ɫ����rgba(255, 255, 255, 0.88)��ɫ�Ǵ���ɫ������0.88��͸���ȣ���0-1֮����ڣ�ֵԽ��Խ��͸����
+    --trans-dark: ҹ��ģʽ��͸���ȵı���ɫ����rgba(25, 25, 25, 0.88)��ɫ����ͺ�ɫ������0.88��͸���ȣ���0-1֮����ڣ�ֵԽ��Խ��͸��;
+    --border-style: �߿���ʽ��1px solid rgb(169, 169, 169)ָ����Ϊ1px�Ļ�ɫʵ��߿�;
+    --backdrop-filter: ��������������blur(5px) saturate(150%)��ʾ���Ͷ�Ϊ150%�ġ���˹ģ���뾶Ϊ5px�Ĺ������������ǿ���Ч����һ��ʵ�ַ���;
+    */
+    --trans-light: rgba(255, 255, 255, 0.88);
+    --trans-dark: rgba(25, 25, 25, 0.88);
+    --border-style: 1px solid rgb(169, 169, 169);
+    --backdrop-filter: blur(5px) saturate(150%);
+  }
+  
+  /* ��ҳ���¿�Ƭ */
+  #recent-posts > .recent-post-item {
+    background: var(--trans-light);
+    backdrop-filter: var(--backdrop-filter);
+    border-radius: 25px;
+    border: var(--border-style);
+  }
+  
+  /* ��ҳ������Ƭ */
+  #aside-content .card-widget {
+    background: var(--trans-light);
+    backdrop-filter: var(--backdrop-filter);
+    border-radius: 18px;
+    border: var(--border-style);
+  }
+  
+  /* ����ҳ���鵵ҳ����ͨҳ�� */
+  div#post,
+  div#page,
+  div#archive {
+    background: var(--trans-light);
+    backdrop-filter: var(--backdrop-filter);
+    border: var(--border-style);
+    border-radius: 20px;
+  }
+  
+  /* ������ */
+  #page-header.nav-fixed #nav {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: var(--backdrop-filter);
+  }
+  
+  [data-theme="dark"] #page-header.nav-fixed #nav {
+    background: rgba(0, 0, 0, 0.7) !important;
+  }
+  
+  /* ҹ��ģʽ���� */
+  [data-theme="dark"] #recent-posts > .recent-post-item,
+  [data-theme="dark"] #aside-content .card-widget,
+  [data-theme="dark"] div#post,
+  [data-theme="dark"] div#archive,
+  [data-theme="dark"] div#page {
+    background: var(--trans-dark);
+  }
+  
+  
+  /* ҹ��ģʽҳ��ҳͷ����͸�� */
+  [data-theme="dark"] #footer::before {
+    background: transparent !important;
+  }
+  [data-theme="dark"] #page-header::before {
+    background: transparent !important;
+  }
+  
+  /* �Ķ�ģʽ */
+  .read-mode #aside-content .card-widget {
+    background: rgba(158, 204, 171, 0.5) !important;
+  }
+  .read-mode div#post {
+    background: rgba(158, 204, 171, 0.5) !important;
+  }
+  
+  /* ҹ��ģʽ�µ��Ķ�ģʽ */
+  [data-theme="dark"] .read-mode #aside-content .card-widget {
+    background: rgba(25, 25, 25, 0.9) !important;
+    color: #ffffff;
+  }
+  [data-theme="dark"] .read-mode div#post {
+    background: rgba(25, 25, 25, 0.9) !important;
+    color: #ffffff;
+  }
