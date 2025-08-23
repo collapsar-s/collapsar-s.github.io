@@ -1,0 +1,8 @@
+/* ��ҳͼƬ���� */
+.index-img {
+  transition: .4s;           /*����ʱ��*/
+}
+.index-card:hover .index-img {
+  transform: scale(1.05);    /*�Ŵ���*/
+}
+

@@ -1,0 +1,812 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#0d0a0a">
+  <meta name="author" content="collapsars">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="JavaSE 基础学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaSE">
+<meta property="og:url" content="http://example.com/2025/08/23/JavaSE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JavaSE 基础学习">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-23T07:35:56.000Z">
+<meta property="article:modified_time" content="2025-08-23T07:42:21.674Z">
+<meta property="article:author" content="collapsars">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>JavaSE - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/source/css/mk.css">
+<link rel="stylesheet" href="/source/css/selection.css">
+<link rel="stylesheet" href="/source/css/cloudedGlass.css">
+<link rel="stylesheet" href="/source/css/indeximg-hover.css">
+<link rel="stylesheet" href="/source/css/mac.css">
+<link rel="stylesheet" href="/source/css/scrollAnimation.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":false},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Collapsars&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/pexels-pixabay.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="JavaSE"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        collapsars
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-23 15:35" pubdate>
+          2025年8月23日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          811 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          7 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">JavaSE</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于 2025-08-23T15:42:21+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="JavaSE-基础学习"><a href="#JavaSE-基础学习" class="headerlink" title="JavaSE 基础学习"></a>JavaSE 基础学习</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li>Java 入门</li>
+<li>基础语法</li>
+<li>面向对象编程</li>
+<li>常用类库</li>
+<li>异常处理</li>
+<li>集合框架</li>
+<li>I&#x2F;O 流</li>
+<li>多线程</li>
+<li>JDBC 数据库编程</li>
+<li>综合练习</li>
+</ol>
+<hr>
+<h2 id="1-Java-入门"><a href="#1-Java-入门" class="headerlink" title="1. Java 入门"></a>1. Java 入门</h2><h3 id="1-1-Java-简介"><a href="#1-1-Java-简介" class="headerlink" title="1.1 Java 简介"></a>1.1 Java 简介</h3><ul>
+<li>Java 是一种 <strong>跨平台</strong>、<strong>面向对象</strong> 的编程语言。</li>
+<li>“一次编写，到处运行”（Write Once, Run Anywhere）。</li>
+</ul>
+<h3 id="1-2-JDK、JRE、JVM"><a href="#1-2-JDK、JRE、JVM" class="headerlink" title="1.2 JDK、JRE、JVM"></a>1.2 JDK、JRE、JVM</h3><ul>
+<li><strong>JDK</strong>：Java Development Kit，开发工具包。</li>
+<li><strong>JRE</strong>：Java Runtime Environment，运行环境。</li>
+<li><strong>JVM</strong>：Java Virtual Machine，Java 程序运行的虚拟机。</li>
+</ul>
+<h3 id="1-3-Hello-World-程序"><a href="#1-3-Hello-World-程序" class="headerlink" title="1.3 Hello World 程序"></a>1.3 Hello World 程序</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] <span class="hljs-keyword">args</span></span>)</span> &#123;<br>        System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;Hello, World!&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="2-基础语法"><a href="#2-基础语法" class="headerlink" title="2. 基础语法"></a>2. 基础语法</h2><h3 id="2-1-数据类型"><a href="#2-1-数据类型" class="headerlink" title="2.1 数据类型"></a>2.1 数据类型</h3><ul>
+<li><p>基本类型</p>
+<p>：</p>
+<ul>
+<li>整型：<code>byte</code>、<code>short</code>、<code>int</code>、<code>long</code></li>
+<li>浮点型：<code>float</code>、<code>double</code></li>
+<li>字符型：<code>char</code></li>
+<li>布尔型：<code>boolean</code></li>
+</ul>
+</li>
+<li><p><strong>引用类型</strong>：类、接口、数组</p>
+</li>
+</ul>
+<h3 id="2-2-变量与常量"><a href="#2-2-变量与常量" class="headerlink" title="2.2 变量与常量"></a>2.2 变量与常量</h3><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs abnf">int age <span class="hljs-operator">=</span> <span class="hljs-number">20</span><span class="hljs-comment">;</span><br>final double PI <span class="hljs-operator">=</span> <span class="hljs-number">3.14159</span><span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="2-3-运算符"><a href="#2-3-运算符" class="headerlink" title="2.3 运算符"></a>2.3 运算符</h3><ul>
+<li>算术运算符：<code>+ - * / %</code></li>
+<li>逻辑运算符：<code>&amp;&amp; || !</code></li>
+<li>关系运算符：<code>== != &gt; &lt; &gt;= &lt;=</code></li>
+</ul>
+<h3 id="2-4-控制语句"><a href="#2-4-控制语句" class="headerlink" title="2.4 控制语句"></a>2.4 控制语句</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">// 条件判断<br><span class="hljs-keyword">if</span> (age &gt; <span class="hljs-number">18</span>) &#123;<br>    <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(&quot;成年人&quot;);<br>&#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(&quot;未成年人&quot;);<br>&#125;<br><br>// 循环<br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;<br>    <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(i);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="3-面向对象编程"><a href="#3-面向对象编程" class="headerlink" title="3. 面向对象编程"></a>3. 面向对象编程</h2><h3 id="3-1-类与对象"><a href="#3-1-类与对象" class="headerlink" title="3.1 类与对象"></a>3.1 类与对象</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> &#123;<br>    String name;<br>    <span class="hljs-built_in">int</span> age;<br><br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">study</span>()</span> &#123;<br>        System.<span class="hljs-keyword">out</span>.println(name + <span class="hljs-string">&quot; 正在学习&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] <span class="hljs-keyword">args</span></span>)</span> &#123;<br>        Student s = <span class="hljs-keyword">new</span> Student();<br>        s.name = <span class="hljs-string">&quot;小明&quot;</span>;<br>        s.age = <span class="hljs-number">20</span>;<br>        s.study();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-2-封装、继承、多态"><a href="#3-2-封装、继承、多态" class="headerlink" title="3.2 封装、继承、多态"></a>3.2 封装、继承、多态</h3><ul>
+<li><strong>封装</strong>：隐藏内部细节，对外提供接口。</li>
+<li><strong>继承</strong>：子类继承父类。</li>
+<li><strong>多态</strong>：同一方法，不同表现。</li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sound</span>()</span> &#123;<br>        System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;动物叫&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> <span class="hljs-title">extends</span> <span class="hljs-title">Animal</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sound</span>()</span> &#123;<br>        System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;汪汪汪&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] <span class="hljs-keyword">args</span></span>)</span> &#123;<br>        Animal a = <span class="hljs-keyword">new</span> Dog();<br>        a.sound();  <span class="hljs-comment">// 输出：汪汪汪</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-3-接口与抽象类"><a href="#3-3-接口与抽象类" class="headerlink" title="3.3 接口与抽象类"></a>3.3 接口与抽象类</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">interface</span> <span class="hljs-title">USB</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">start</span>()</span>;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span>()</span>;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title">Mouse</span> <span class="hljs-title">implements</span> <span class="hljs-title">USB</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span>()</span> &#123; System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;鼠标启动&quot;</span>); &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">stop</span>()</span> &#123; System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;鼠标关闭&quot;</span>); &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="4-常用类库"><a href="#4-常用类库" class="headerlink" title="4. 常用类库"></a>4. 常用类库</h2><h3 id="4-1-字符串操作"><a href="#4-1-字符串操作" class="headerlink" title="4.1 字符串操作"></a>4.1 字符串操作</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">String <span class="hljs-built_in">s1</span> = <span class="hljs-string">&quot;Hello&quot;</span>;<br>String <span class="hljs-built_in">s2</span> = <span class="hljs-string">&quot;World&quot;</span>;<br>System.out.println(<span class="hljs-built_in">s1</span> + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-built_in">s2</span>)<span class="hljs-comment">; // Hello World</span><br>System.out.println(<span class="hljs-built_in">s1</span>.length())<span class="hljs-comment">;   // 5</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="4-2-Math-类"><a href="#4-2-Math-类" class="headerlink" title="4.2 Math 类"></a>4.2 Math 类</h3><figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs glsl">System.<span class="hljs-keyword">out</span>.println(Math.<span class="hljs-built_in">pow</span>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>));  <span class="hljs-comment">// 8</span><br>System.<span class="hljs-keyword">out</span>.println(Math.<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">16</span>));   <span class="hljs-comment">// 4</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="4-3-日期与时间"><a href="#4-3-日期与时间" class="headerlink" title="4.3 日期与时间"></a>4.3 日期与时间</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">import</span> java.util.Date;<br><br><span class="hljs-type">Date</span> d = <span class="hljs-built_in">new</span> <span class="hljs-type">Date</span>();<br><span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(d);<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-异常处理"><a href="#5-异常处理" class="headerlink" title="5. 异常处理"></a>5. 异常处理</h2><h3 id="5-1-try-catch"><a href="#5-1-try-catch" class="headerlink" title="5.1 try-catch"></a>5.1 try-catch</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-built_in">int</span> x = <span class="hljs-number">10</span> / <span class="hljs-number">0</span>;<br>&#125; <span class="hljs-keyword">catch</span> (ArithmeticException e) &#123;<br>    System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;除数不能为0&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="5-2-throw-与-throws"><a href="#5-2-throw-与-throws" class="headerlink" title="5.2 throw 与 throws"></a>5.2 throw 与 throws</h3><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs aspectj"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">checkAge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> age)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br>    <span class="hljs-keyword">if</span> (age &lt; <span class="hljs-number">18</span>) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Exception(<span class="hljs-string">&quot;未成年&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="6-集合框架"><a href="#6-集合框架" class="headerlink" title="6. 集合框架"></a>6. 集合框架</h2><h3 id="6-1-List"><a href="#6-1-List" class="headerlink" title="6.1 List"></a>6.1 List</h3><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs abnf">import java.util.*<span class="hljs-comment">;</span><br><br>List&lt;String&gt; list <span class="hljs-operator">=</span> new ArrayList&lt;&gt;()<span class="hljs-comment">;</span><br>list.add(<span class="hljs-string">&quot;A&quot;</span>)<span class="hljs-comment">;</span><br>list.add(<span class="hljs-string">&quot;B&quot;</span>)<span class="hljs-comment">;</span><br>System.out.println(list)<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="6-2-Map"><a href="#6-2-Map" class="headerlink" title="6.2 Map"></a>6.2 Map</h3><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs vhdl"><span class="hljs-keyword">Map</span>&lt;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">Integer</span>&gt; <span class="hljs-keyword">map</span> = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br><span class="hljs-keyword">map</span>.put(<span class="hljs-string">&quot;Tom&quot;</span>, <span class="hljs-number">20</span>);<br><span class="hljs-keyword">map</span>.put(<span class="hljs-string">&quot;Jerry&quot;</span>, <span class="hljs-number">18</span>);<br>System.<span class="hljs-keyword">out</span>.println(<span class="hljs-keyword">map</span>.get(<span class="hljs-string">&quot;Tom&quot;</span>));<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="7-I-O-流"><a href="#7-I-O-流" class="headerlink" title="7. I&#x2F;O 流"></a>7. I&#x2F;O 流</h2><h3 id="7-1-文件读写"><a href="#7-1-文件读写" class="headerlink" title="7.1 文件读写"></a>7.1 文件读写</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.io.*;<br><br><span class="hljs-keyword">try</span> (<span class="hljs-type">FileWriter</span> <span class="hljs-variable">fw</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileWriter</span>(<span class="hljs-string">&quot;test.txt&quot;</span>)) &#123;<br>    fw.write(<span class="hljs-string">&quot;Hello Java&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="7-2-文件读取"><a href="#7-2-文件读取" class="headerlink" title="7.2 文件读取"></a>7.2 文件读取</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">try (BufferedReader br = <span class="hljs-built_in">new</span> BufferedReader(<span class="hljs-built_in">new</span> FileReader(&quot;test.txt&quot;))) &#123;<br>    String <span class="hljs-type">line</span>;<br>    <span class="hljs-keyword">while</span> ((<span class="hljs-type">line</span> = br.readLine()) != <span class="hljs-keyword">null</span>) &#123;<br>        <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(<span class="hljs-type">line</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="8-多线程"><a href="#8-多线程" class="headerlink" title="8. 多线程"></a>8. 多线程</h2><h3 id="8-1-继承-Thread"><a href="#8-1-继承-Thread" class="headerlink" title="8.1 继承 Thread"></a>8.1 继承 Thread</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">class</span> <span class="hljs-title">MyThread</span> <span class="hljs-title">extends</span> <span class="hljs-title">Thread</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span>()</span> &#123;<br>        System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;线程运行中&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] <span class="hljs-keyword">args</span></span>)</span> &#123;<br>        <span class="hljs-keyword">new</span> MyThread().start();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="8-2-实现-Runnable"><a href="#8-2-实现-Runnable" class="headerlink" title="8.2 实现 Runnable"></a>8.2 实现 Runnable</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyRunnable</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Runnable</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-title function_">run</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-title class_">System</span>.<span class="hljs-property">out</span>.<span class="hljs-title function_">println</span>(<span class="hljs-string">&quot;实现 Runnable 的线程&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">void</span> <span class="hljs-title function_">main</span>(<span class="hljs-params"><span class="hljs-title class_">String</span>[] args</span>) &#123;<br>        <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">MyRunnable</span>()).<span class="hljs-title function_">start</span>();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="9-JDBC-数据库编程"><a href="#9-JDBC-数据库编程" class="headerlink" title="9. JDBC 数据库编程"></a>9. JDBC 数据库编程</h2><h3 id="9-1-基本步骤"><a href="#9-1-基本步骤" class="headerlink" title="9.1 基本步骤"></a>9.1 基本步骤</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.sql.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JDBCTest</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        <span class="hljs-comment">// 1. 加载驱动</span><br>        Class.forName(<span class="hljs-string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);<br>        <span class="hljs-comment">// 2. 建立连接</span><br>        <span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> DriverManager.getConnection(<br>            <span class="hljs-string">&quot;jdbc:mysql://localhost:3306/test&quot;</span>, <span class="hljs-string">&quot;root&quot;</span>, <span class="hljs-string">&quot;123456&quot;</span>);<br>        <span class="hljs-comment">// 3. 创建语句</span><br>        <span class="hljs-type">Statement</span> <span class="hljs-variable">stmt</span> <span class="hljs-operator">=</span> conn.createStatement();<br>        <span class="hljs-comment">// 4. 执行查询</span><br>        <span class="hljs-type">ResultSet</span> <span class="hljs-variable">rs</span> <span class="hljs-operator">=</span> stmt.executeQuery(<span class="hljs-string">&quot;SELECT * FROM student&quot;</span>);<br>        <span class="hljs-keyword">while</span> (rs.next()) &#123;<br>            System.out.println(rs.getString(<span class="hljs-string">&quot;name&quot;</span>));<br>        &#125;<br>        <span class="hljs-comment">// 5. 关闭连接</span><br>        rs.close();<br>        stmt.close();<br>        conn.close();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java/" class="print-no-link">#Java</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>JavaSE</div>
+      <div>http://example.com/2025/08/23/JavaSE/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>collapsars</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月23日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年8月23日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/23/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div>  
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/source/js/duration.js"></script>
+<script src="/source/js/backgroundize.js"></script>
+<script src="/source/js/codeType.js"></script>
+<script src="/source/js/scrollAnimation.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
+</html>
